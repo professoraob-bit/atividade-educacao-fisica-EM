@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Painel do Professor — Educação Física</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <div class="school">EEEFM VERALDO LEITE</div>
+      <div class="title">PAINEL DE EDUCAÇÃO FÍSICA</div>
+      <div class="teacher">PROF. ARTHUR BARBOSA</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="login-card" class="card narrow">
+      <h1>Login do professor</h1>
+      <form id="login-form">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" required>
+        <label for="password">Senha</label>
+        <input id="password" type="password" required>
+        <button class="primary large" type="submit">Entrar</button>
+        <p id="login-error" class="error" hidden></p>
+      </form>
+    </section>
+
+    <section id="panel-card" hidden>
+      <div class="card">
+        <div class="panel-heading">
+          <div>
+            <h1>Resultados</h1>
+            <p id="total-label" class="muted"></p>
+          </div>
+          <button id="logout-btn" class="secondary">Sair</button>
+        </div>
+
+        <div class="filters">
+          <div>
+            <label for="filter-turma">Turma</label>
+            <select id="filter-turma">
+              <option value="">Todas</option>
+              <option>1ª série A</option>
+              <option>1ª série B</option>
+              <option>2ª série</option>
+              <option>3ª série</option>
+            </select>
+          </div>
+          <div>
+            <label for="filter-turno">Turno</label>
+            <select id="filter-turno">
+              <option value="">Todos</option>
+              <option>Manhã</option>
+              <option>Tarde</option>
+            </select>
+          </div>
+          <div>
+            <label for="filter-date">Data</label>
+            <input id="filter-date" type="date">
+          </div>
+          <div class="filter-actions">
+            <button id="clear-filters" class="secondary">Limpar</button>
+            <button id="export-csv" class="primary">Exportar CSV</button>
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Turma</th>
+                <th>Turno</th>
+                <th>Acertos</th>
+                <th>Percentual</th>
+                <th>Data/hora</th>
+              </tr>
+            </thead>
+            <tbody id="results-body"></tbody>
+          </table>
+        </div>
+        <p id="panel-error" class="error" hidden></p>
+      </div>
+
+      <section id="detail-card" class="card" hidden>
+        <div class="panel-heading">
+          <div>
+            <h2 id="detail-name"></h2>
+            <p id="detail-summary" class="muted"></p>
+          </div>
+          <button id="close-detail" class="secondary">Fechar</button>
+        </div>
+        <div id="detail-questions"></div>
+      </section>
+    </section>
+  </main>
+
+  <script type="module" src="./professor.js"></script>
+</body>
+</html>

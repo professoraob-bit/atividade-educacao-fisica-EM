@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Atividade Assíncrona — Educação Física</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div>
+      <div class="school">EEEFM VERALDO LEITE</div>
+      <div class="title">ATIVIDADE ASSÍNCRONA DE EDUCAÇÃO FÍSICA</div>
+      <div class="teacher">PROF. ARTHUR BARBOSA</div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="start-card" class="card">
+      <h1>Iniciar atividade</h1>
+      <p class="muted">Preencha seus dados para começar. Você responderá 10 questões.</p>
+
+      <form id="student-form">
+        <label for="nome">Nome completo</label>
+        <input id="nome" name="nome" type="text" maxlength="120" required>
+
+        <label for="turma">Turma</label>
+        <select id="turma" name="turma" required>
+          <option value="">Selecione</option>
+          <option>1ª série A</option>
+          <option>1ª série B</option>
+          <option>2ª série</option>
+          <option>3ª série</option>
+        </select>
+
+        <label for="turno">Turno</label>
+        <select id="turno" name="turno" required>
+          <option value="">Selecione</option>
+          <option>Manhã</option>
+          <option>Tarde</option>
+        </select>
+
+        <div class="privacy">
+          Os dados informados serão utilizados exclusivamente para registro e acompanhamento desta atividade pedagógica e estarão disponíveis apenas ao professor responsável.
+        </div>
+
+        <button class="primary large" type="submit">Iniciar atividade</button>
+        <p id="start-error" class="error" hidden></p>
+      </form>
+    </section>
+
+    <section id="quiz-card" class="card" hidden>
+      <div class="quiz-top">
+        <div>
+          <div id="progress-text" class="progress-text">Questão 1 de 10</div>
+          <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+        </div>
+      </div>
+
+      <div id="question-container"></div>
+
+      <div class="quiz-actions">
+        <button id="next-btn" class="primary large">Próxima questão</button>
+        <button id="finish-btn" class="primary large" hidden>Finalizar atividade</button>
+      </div>
+      <p id="quiz-error" class="error" hidden></p>
+    </section>
+
+    <section id="done-card" class="card center" hidden>
+      <div class="success-icon">✓</div>
+      <h1>Atividade concluída e registrada com sucesso.</h1>
+      <p class="muted">Você já pode fechar esta página.</p>
+    </section>
+  </main>
+
+  <script type="module" src="./student.js"></script>
+</body>
+</html>
