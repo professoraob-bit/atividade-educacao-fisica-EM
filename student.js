@@ -25,7 +25,9 @@ const $ = (id) => document.getElementById(id);
 const shuffle = (arr) => [...arr].sort(() => Math.random() - 0.5);
 
 function serieBanco(turma) {
-  return turma.startsWith("1ª") ? "1ª série" : turma;
+  if (turma.startsWith("1ª")) return "1ª série";
+  if (turma.startsWith("2ª")) return "2ª série";
+  return turma;
 }
 
 function renderQuestion() {
